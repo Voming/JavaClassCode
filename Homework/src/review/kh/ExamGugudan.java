@@ -1,3 +1,4 @@
+package review.kh;
 
 public class ExamGugudan {
 	public static void main(String args[]) {

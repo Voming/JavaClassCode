@@ -63,18 +63,39 @@ public class TestArray {
 		int[] v4 = new int[]{10,20};
 		String[] v5 = new String[]{"기호", "주의"};
 		char v6 = '한';*/
-		
+		int arr_1[][] = new int[2][3];
+
+		for (int i = 0; i < arr_1.length; i++) {
+			for (int j = 0; j < arr_1[0].length; j++) {
+				arr_1[i][j] = 10;
+			}
+		}
 		
 		/*2차원 배열*/ 
 		//정변 배열
 		int[][] array20 = {{1,2,3,4} , {5,6,7,8}};  //[2][4]
+		//가변 배열
 		int[][] array21 = {{1,2,3,4} , {5,6,7}};  //[2][4] (가로 세로가 딱 떨어지게 정변 배열이 만들어짐)
-		array21[1][3] = 8;
+		//array21[1][3] = 8; 불가능
 		
 		//가변 배열
 		int[][] arr30 = new int [3][];
 		arr30[0] = new int [3];   // = new int[] {1,2,3} 형식과 동일
 		arr30[1] = new int [2];
 		arr30[2] = new int [5];   //new int가 빠지면 안됨!!!
+		
+		System.out.println(array20.length); // 행크기, m
+		System.out.println(array20[0].length); // 행[0]의 열크기, n
+		System.out.println(array20[1].length); // 행[1]의 열크기, o
+		
+		System.out.println("====2차원 가변 배열====");
+		for(int m = 0; m < array20.length; m++) {
+			for(int n = 0; n < array20[0].length; n++) {
+				System.out.println(array20[m][n]); 
+			}
+		}
+		
+		
 	}
+	
 }

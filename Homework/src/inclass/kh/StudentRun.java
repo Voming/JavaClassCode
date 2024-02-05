@@ -28,6 +28,7 @@ public class StudentRun {
 				Student jw = new Student();
 				jw.setName(inputName);
 				jw.setId(inputId);
+				jw.id = inputId; // proteccted는 같은 패키지여서 괜찮다
 				
 				String inputStr = sc.nextLine(); // String은 ==을 사용하면 안됨
 				if(inputStr.equals("퇴근")) {     // Stirng 비교는 equals()사용

@@ -3,10 +3,10 @@ package inclass.kh;
 //클래스 실습
 public class Student {
 	// private 클래스 내부에서만 사용
-	private String id;
+	protected String id;
 	private String name;
 	private String phone;
-	private int age;
+	private int age;     //두번째 글자가 대문자면 몇몇 프레임 워크에서 오류를 발생시킨다
 	//접근제한자를 적지 않았다면 default
 	
 	// Getter / Setter 게터, 세터

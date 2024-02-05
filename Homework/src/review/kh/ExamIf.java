@@ -42,6 +42,7 @@ public class ExamIf {
 		}
 		System.out.println(result3);
 		
+		//비트 연산자
 		int data = 10;
 		System.out.println(~data); //1의 보수
 		System.out.println(~data + 1); //0의 보수

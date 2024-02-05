@@ -44,8 +44,8 @@ public class TestArray {
 			System.out.println(arr2[i]);
 		}
 		
-		//복사
-		System.arraycopy(arr1, 0, arr2, 0, arr1.length);
+		//복사 방법2
+		System.arraycopy(arr1, 0, arr2, 0, arr1.length);   //arr2에서 복사설정하지 않은 부분은 arr2그대로 유지됨
 		
 		System.out.println("====원본====");
 		for(int i =0; i<arr1.length; i++) {  
@@ -57,5 +57,24 @@ public class TestArray {
 		}
 		
 		
+		/*int v1 = 100;
+		double v2  = 5.3;
+		String v3 = "자료형에 따른 접근 가능 메소드";
+		int[] v4 = new int[]{10,20};
+		String[] v5 = new String[]{"기호", "주의"};
+		char v6 = '한';*/
+		
+		
+		/*2차원 배열*/ 
+		//정변 배열
+		int[][] array20 = {{1,2,3,4} , {5,6,7,8}};  //[2][4]
+		int[][] array21 = {{1,2,3,4} , {5,6,7}};  //[2][4] (가로 세로가 딱 떨어지게 정변 배열이 만들어짐)
+		array21[1][3] = 8;
+		
+		//가변 배열
+		int[][] arr30 = new int [3][];
+		arr30[0] = new int [3];   // = new int[] {1,2,3} 형식과 동일
+		arr30[1] = new int [2];
+		arr30[2] = new int [5];   //new int가 빠지면 안됨!!!
 	}
 }

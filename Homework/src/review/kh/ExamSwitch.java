@@ -1,6 +1,6 @@
 package review.kh;
 
-public class SwitchTest {
+public class ExamSwitch {
 	public static void main(String[] args) {
 		int month = 12;
 		double temperature = 0;

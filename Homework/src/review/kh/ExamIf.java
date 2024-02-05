@@ -1,6 +1,6 @@
 package review.kh;
 
-public class IfTest {
+public class ExamIf {
 	public static void main(String args[]) {
 		int score = 80;
 		String grade = "";

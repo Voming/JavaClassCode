@@ -11,5 +11,7 @@ public class Run {
 		dp1.practice2();
 		System.out.println("====practice3====");
 		dp1.practice3();
+		
+		
 	}
 }

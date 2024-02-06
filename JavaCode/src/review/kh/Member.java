@@ -1,48 +1,36 @@
 package review.kh;
 
 public class Member {
-	private String memberId;
-	private String memberPwd;
 	private String memberName;
-	private int age;
-	private char gender;
-	private String phone;
+	private final int age; // private final int age; 이렇게 쓰면 생성자에서 오류 뜸 -> new Member()하였을때
+	// private final int age; //final 필드는 초기화가 꼭 필요하다 -> 초기값을 주면 해결
 	private String email;
+	private double score = 80.5;
+	private char gender;
 
-	public Member() {
-
+	public Member() { // 명시적으로 또는 생성자 안에 초기화 몰아서 함
+		this.age = 1000; // 초기화하면 괜찮음
+		this.score = 90.2; // 마지막으로 초기화 한 값이 들어간다
 	}
 
-	public void changeName(String name) {
-
+	public void setScore(double score) {
+		this.score = score;
 	}
 
-	public void printName() {
-
+	public double getScore() {
+		return this.score;
 	}
 
-	public String getMemberId() {
-		return memberId;
+	public void setName(String name) {
+		this.memberName = name;
 	}
 
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-	}
-
-	public String getMemberPwd() {
-		return memberPwd;
-	}
-
-	public void setMemberPwd(String memberPwd) {
-		this.memberPwd = memberPwd;
+	public String getName() {
+		return this.memberName;
 	}
 
 	public int getAge() {
 		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public char getGender() {
@@ -51,14 +39,6 @@ public class Member {
 
 	public void setGender(char gender) {
 		this.gender = gender;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 
 	public String getEmail() {

@@ -6,15 +6,15 @@ public class Student {
 	protected String id;
 	private String name;
 	private String phone;
-	private int age;     //두번째 글자가 대문자면 몇몇 프레임 워크에서 오류를 발생시킨다
-	//접근제한자를 적지 않았다면 default
-	
+	private int age; // 두번째 글자가 대문자면 몇몇 프레임 워크에서 오류를 발생시킨다
+	// 접근제한자를 적지 않았다면 default
+
 	// Getter / Setter 게터, 세터
-	//오른쪽 마우스 -> Source -> Generate getter...
+	// 오른쪽 마우스 -> Source -> Generate getter...
 	void exam(String name) {
-		System.out.println( name + "님 시험을 진행합니다.");
+		System.out.println(name + "님 시험을 진행합니다.");
 	}
-	
+
 	public String getId() {
 		return id;
 	}

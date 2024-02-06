@@ -8,17 +8,17 @@ public class Member {
 	private char gender;
 	private String phone;
 	private String email;
-	
+
 	public Member() {
-		
+
 	}
-	
+
 	public void changeName(String name) {
-		
+
 	}
-	
+
 	public void printName() {
-		
+
 	}
 
 	public String getMemberId() {
@@ -68,7 +68,5 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
-	
+
 }

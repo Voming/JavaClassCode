@@ -5,13 +5,13 @@ public class ExamSwitch {
 		int month = 12;
 		double temperature = 0;
 		String season = "";
-		
+
 		switch (month) {
 		case 1:
 			season = "겨울";
-			if(temperature <= -15) {
+			if (temperature <= -15) {
 				season += " 한파 경보";
-			} else if(temperature <= -12) {
+			} else if (temperature <= -12) {
 				season += " 한파 주의보";
 			}
 			break;
@@ -26,11 +26,11 @@ public class ExamSwitch {
 			break;
 		case 6:
 			season = "여름";
-			if(temperature >= 35) {
+			if (temperature >= 35) {
 				season += " 폭염 경보";
-				} else if(temperature >= 33) {
+			} else if (temperature >= 33) {
 				season += " 폭염 주의보";
-				}
+			}
 			break;
 		case 7:
 			season = "여름";
@@ -54,7 +54,7 @@ public class ExamSwitch {
 			season = "해당하는 계절이 없습니다.";
 			break;
 		}
-		
-		System.out.println( month + "월은 " + season +"입니다.");
+
+		System.out.println(month + "월은 " + season + "입니다.");
 	}
 }

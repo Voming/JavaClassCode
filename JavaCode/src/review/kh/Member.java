@@ -13,6 +13,30 @@ public class Member {
 		this.score = 90.2; // 마지막으로 초기화 한 값이 들어간다
 	}
 
+	// 오버로딩 : 같은 클래스 내에서 매개변수가 다름
+	public long sum(int a, int b) {
+		return (long) a + b;
+	}
+
+	/* 오류 : 리턴형이 중요한 것이 아니라 매개변수 자료형, 매개변수 개수가 달라야한다.
+	 * public int sum(int a, int b) { return a + b; }
+	 */
+
+	public double sum(float a, float b) {
+		return (double) a + b;
+	}
+	
+	public long sum(int a, int b, int c) {
+		return (long) a + b + c;
+	}
+	
+	public long sum(int a, double b, int c) {
+		return  a + (long)b + c;
+	}
+	public long sum(double a, int b, int c) {
+		return (long) a + b + c;
+	}
+
 	public void setScore(double score) {
 		this.score = score;
 	}

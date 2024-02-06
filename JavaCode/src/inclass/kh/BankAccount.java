@@ -9,22 +9,37 @@ public class BankAccount {
 	private String cid;
 	private int balance;
 
-	/*
-	 * public BankAccount() { //기본 생성자 생략 가능
-	 * }
+	/* 기본 생성자 생략 가능 
+	 * public BankAccount() { }
 	 */
 
-	public BankAccount(String owner, String cid, String password) { // 제한이 있는 생성자
+	public BankAccount(String owner, String cid, String password, String no) { // 제한이 있는 생성자
 		this.owner = owner;
 		this.cid = cid;
 		this.password = password;
 		if (BankAccount.amount == 0) {
-			System.out.println("더이상 계좌 개설이 불가능합니다");
+			System.out.println("더이상 계좌 개설이 불가능합니다. 다음기회에 이용해주세요");
 			return;
 		}
 		BankAccount.amount--; // 접근할 때 this 말고 클래스 명을 사용 권장
-		this.no = "";
-	}  //제힌이 있는 생성자
+		this.no = no;
+	} // 제힌이 있는 생성자
+
+	// 생성자 오버로딩
+	public BankAccount(String no, String password, String owner, String cid, int balance) {
+		/* 중복된 코드가 있는경우 
+		 * if (BankAccount.amount == 0) {
+		 * System.out.println("더이상 계좌 개설이 불가능합니다. 다음기회에 이용해주세요"); return; }
+		 */
+		// 생성자 this는 첫번째 줄에서만 사용가능 -> 위에 있는 생성자 불러옴(위치 상관X)
+		this(owner, cid, password, String.valueOf(Math.random()).substring(2)); // 괄호 위치 주의
+		// System.out.println(Math.random());
+		/*
+		 * 위의 String.valueOf(Math.random())와 동일 double randomNo = Math.random(); String
+		 * randStr = String.valueOf(randomNo); this.no = String.valueOf(randomNo);
+		 */
+		this.balance = balance;
+	}
 
 	public void deposite(int input) {
 		balance += input;
@@ -38,7 +53,7 @@ public class BankAccount {
 		balance -= input; // 정상적인 식 실행
 	}
 
-	//많이 쓰이고 자주 호출되는 메소드에 static을 붙임
+	// 많이 쓰이고 자주 호출되는 메소드에 static을 붙임
 	public static int getAmount() {
 		return BankAccount.amount;
 	}
@@ -75,5 +90,4 @@ public class BankAccount {
 	public int getBalance() {
 		return balance;
 	}
-
 }

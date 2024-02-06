@@ -14,9 +14,9 @@ public class BankRun {
 		System.out.println("성함과 주민번호를 주시면 계좌를 개설해 드릴게요.");
 
 		// 같은 패키지 내부라 앞에 import를 하지 않아도 된다.
-		BankAccount yi = new BankAccount("yi", "11111", "2323"); // 인스턴스 : 자료형이 참조형, new로 생성해서 씀
-		BankAccount jw = new BankAccount("jw", "22222", "1234"); // 본인만의 heap공간이 있음
-		BankAccount cw = new BankAccount("cw", "33333", "5555");
+		BankAccount yi = new BankAccount("yi", "11111", "2323", ""); // 인스턴스 : 자료형이 참조형, new로 생성해서 씀
+		BankAccount jw = new BankAccount("jw", "22222", "1234", ""); // 본인만의 heap공간이 있음
+		BankAccount cw = new BankAccount("cw", "33333", "5555", "");
 		/*
 		 * BankAccount af = new BankAccount("cw","33333","5555"); 
 		 * BankAccount sd = new BankAccount("cw","33333","5555"); 

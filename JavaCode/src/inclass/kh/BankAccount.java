@@ -45,7 +45,11 @@ public class BankAccount {
 		balance += input;
 	}
 
-	public void redraw(int input) {
+	public void withdraw(int input, String inuptPass) {
+		if(!this.checkPassword(inuptPass)) {
+			System.out.println("비밀번호가 틀립니다. 다시 확인하세요.");
+			return;
+		}   //else를 쓰지 않아도 return되지 않았다면 아래를 실행함
 		if (balance < input) {
 			System.out.println("잔액부족");
 			return; // 먼저 빠저나가게 하고
@@ -66,6 +70,13 @@ public class BankAccount {
 	 * private void setAmount(int amount) { //생성이 되는 시점에만 설정하게 함부로 접근하지 못하게 함
 	 * BankAccount.amount = amount; }
 	 */
+	
+	public boolean checkPassword(String inputPassword) {
+		if(inputPassword.equals(password)) {
+			return true;
+		}
+		return false;
+	}
 
 	public String getNo() {
 		return no;

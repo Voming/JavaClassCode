@@ -1,7 +1,5 @@
 package inclass.kh.week2.abstract_test.run;
 
-import java.net.InterfaceSample;
-
 import inclass.kh.week2.abstract_test.Person;
 import inclass.kh.week2.abstract_test.Professor;
 import inclass.kh.week2.abstract_test.Student;

@@ -1,5 +1,7 @@
 package inclass.kh.week2.abstract_test.run;
 
+import java.net.InterfaceSample;
+
 import inclass.kh.week2.abstract_test.Person;
 import inclass.kh.week2.abstract_test.Professor;
 import inclass.kh.week2.abstract_test.Student;
@@ -28,5 +30,8 @@ public class TestAbstract {
 		};
 		
 		person.out();
+		
+		//InterfaceSample In = new InterfaceSample();
+		// 사용하지 않음 내용 재정의가 필요함
 	}
 }

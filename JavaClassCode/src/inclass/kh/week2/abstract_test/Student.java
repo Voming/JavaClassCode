@@ -1,6 +1,9 @@
 package inclass.kh.week2.abstract_test;
 
-public class Student extends Person {
+import inclass.kh.week2.Child;
+import inclass.kh.week2.abstract_sample.InterfaceSample;
+
+public class Student extends Person implements InterfaceSample {
 	private String subject;
 
 	public Student() {
@@ -42,5 +45,31 @@ public class Student extends Person {
 	public void out(int a) {   // abstract 함수에서 매개변수가 있는 다른 함수를 만들고 싶다면 기본형태의 메소드를 미리 만들어둬야함
 		System.out.println("저는 " + getName() + " 학생입니다.");
 		System.out.println(subject + " 수강하고 있습니다.");
+	}
+
+	
+	//인터페이스에 있는 내용 재정의
+	@Override
+	public void method1(Child c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void method2() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void method3() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void method4() {
+		// TODO Auto-generated method stub
+		
 	}
 }

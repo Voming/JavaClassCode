@@ -1,6 +1,6 @@
 package inclass.kh.week2;
 
-public class B {
+public final class B {
 	private int num1;
 	private String str;
 	

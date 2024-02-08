@@ -1,8 +1,9 @@
 package inclass.kh.week2;
 
-public class A {
+public class A extends Object{   //내 자식이 누구인지 알 수 없음
 	private int num1;
-	public void method1(){
+	
+	void method1(){
 		System.out.println("method1");
 	}
 	@Override

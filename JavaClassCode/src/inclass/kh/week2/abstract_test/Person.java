@@ -1,10 +1,10 @@
-package review.kh.week2;
+package inclass.kh.week2.abstract_test;
 
 public class Person {
-	String name;
-	
+	private String name;
+
 	public Person() {
-		super();
+
 	}
 
 	public Person(String name) {

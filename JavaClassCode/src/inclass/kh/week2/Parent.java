@@ -1,7 +1,8 @@
 package inclass.kh.week2;
 
 public class Parent {
-	protected int num;
+	protected int num = 1;
+	
 	
 	public Parent(){
 		super();
@@ -21,5 +22,4 @@ public class Parent {
 	protected void setNum(int num) {
 		this.num = num;
 	}
-
 }

@@ -1,6 +1,7 @@
 package inclass.kh.week2;
 
 public class Child extends Parent {
+	private int num = 2;
 	
 	public Child(){
 		this(10);
@@ -8,7 +9,7 @@ public class Child extends Parent {
 	
 	public Child(int a){
 		super();
-		setNum(a);
+		setNum(a);  //부모의 함수 -> super.num으로 들어감
 	}
 	
 	
@@ -19,6 +20,8 @@ public class Child extends Parent {
 	@Override
 	public void display() {
 		System.out.println("안녕하세요. 인사드립니다.");
+		System.out.println("num : " + num);
+		System.out.println("super.num : " + super.num);
 		super.display();
 	}
 

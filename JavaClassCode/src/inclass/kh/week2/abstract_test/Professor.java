@@ -29,6 +29,7 @@ public class Professor extends Person {
 		this.major = major;
 	}
 	
+	@Override
 	public void out() {
 		System.out.println("저는 " + getName() + " 교수입니다.");
 		System.out.println(major + " 전공하고 있습니다.");

@@ -18,6 +18,11 @@ public class BubbleTest {
 			//static 안쓴다면 아래처럼 써야함
 			//new BubbleTest().printArray(arr);
 		}
+		
+		String str1 = "abc";
+		String str2 = "dfe";
+		int comp = str1.compareTo(str2);
+		System.out.println(comp); 
 	}
           //static없애면 안됨(static인 main에서 사용하기 때문
 	public static void printArray(Object[] arr) {//메소드의 매개변수에 업캐스팅을 많이 쓴다
@@ -28,7 +33,5 @@ public class BubbleTest {
 	}
 	
 	//compareTo()반환값
-	//0: 두개의 문자열이 동일
-	//양수 : 호출하는 객체가 인자보다 사전적으로 순서가 앞설 때(크기가 클때) -> a > b
-	//음수 : 인자가 객체보다 사전적으로 순서가 앞설 때 -> a < b
+	//str보다 사전순으로 앞이면 음수, 같으면 0, 뒤면 정수 값을 반환
 }

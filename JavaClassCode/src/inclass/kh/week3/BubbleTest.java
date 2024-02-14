@@ -24,7 +24,7 @@ public class BubbleTest {
 		String str2 = "dfe";
 		int comp = str1.compareTo(str2);
 		System.out.println(comp);
-		str1 = str1.replaceAll("[a-z]", "*");
+		str1 = str1.replaceAll("[a-z]", "알파벳");
 		System.out.println(str1);
 
 		System.out.println("hello".concat("world"));

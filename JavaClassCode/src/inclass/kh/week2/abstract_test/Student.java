@@ -1,5 +1,8 @@
 package inclass.kh.week2.abstract_test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import inclass.kh.week2.Child;
 import inclass.kh.week2.abstract_sample.InterfaceSample;
 
@@ -21,7 +24,7 @@ public class Student extends Person implements InterfaceSample {
 
 	@Override
 	public String toString() {
-		return "Student [subject=" + subject + "]";
+		return "Student "+ getName() + " [subject=" + subject + "]";
 	}
 
 	// 보통 getter, setter 는 맨 아래에 적음

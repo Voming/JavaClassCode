@@ -105,7 +105,7 @@ public class CollectionTest {
 		mapList.add(mapStu);
 		System.out.println(mapList);
 		
-		
+		System.out.println("----------");
 		Map<String, List<Student>> map2 = new HashMap<String, List<Student>>();
 		List<Student> list2 = new ArrayList<Student>();
 		Student instance2 = new Student();
@@ -115,6 +115,17 @@ public class CollectionTest {
 		instance22.setName("ttt");
 		list2.add(instance22);
 		map2.put("학생2", list2);
+		System.out.println(map2);
+		
+		List<Student> list22 = new ArrayList<Student>();
+		System.out.println("----------2");
+		Student instance23 = new Student();
+		instance23.setName("ㅁㅁㅁㅁ");
+		list22.add(instance23);
+		Student instance24 = new Student();
+		instance24.setName("ㄷㄷㄷㄷ");
+		list22.add(instance24);
+		map2.put("학생3", list22);
 		System.out.println(map2);
 		
 		

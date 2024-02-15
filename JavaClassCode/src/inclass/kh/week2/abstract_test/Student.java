@@ -24,7 +24,7 @@ public class Student extends Person implements InterfaceSample {
 
 	@Override
 	public String toString() {
-		return "Student "+ getName() + " [subject=" + subject + "]";
+		return "(Student 이름: "+ getName() + " 과목: " + subject + ")";
 	}
 
 	// 보통 getter, setter 는 맨 아래에 적음

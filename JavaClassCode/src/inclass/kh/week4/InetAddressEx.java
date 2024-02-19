@@ -2,6 +2,7 @@ package inclass.kh.week4;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 public class InetAddressEx {
 	public void method1(String domain) {
@@ -17,6 +18,22 @@ public class InetAddressEx {
 			// IP주소를 byte 배열로 리턴
 			byte[] b = ia.getAddress(); // new 는 안했지만 이미 new 가 되어있는 ia를 가져와서 사용한다.
 			System.out.println("getAddress : " + b);
+			System.out.println("getAddress : " + Arrays.toString(b)); // for문 사용하지 않고 배열 출력하기 + String으로 변환
+			// byte 반목문 출력
+			for (byte item : b) {
+				System.out.println(item);
+			}
+			//양수로 바꿔주고 싶을 때
+			for (int i = 0; i < b.length; i++) {
+				if (b[i] < 0)
+					System.out.print(b[i] + 256);
+				else
+					System.out.print(b[i]);
+				System.out.print(".");
+			}
+			System.out.println();
+			
+			
 
 			// byte 배열을 통해 IP주소를 얻는다.
 			InetAddress iaA = InetAddress.getByAddress(b);
@@ -25,6 +42,7 @@ public class InetAddressEx {
 			// 도메인 명에 지정된 모든 호스트의 IP주소를 배열에 담아 반환
 			InetAddress[] iaAN = InetAddress.getAllByName(domain);
 			System.out.println("getAllByName : " + iaAN);
+			System.out.println("getAllByName : " + Arrays.toString(iaAN));
 
 			// 지역호스트의 IP주소를 반환한다.
 			InetAddress iaLH = InetAddress.getLocalHost();

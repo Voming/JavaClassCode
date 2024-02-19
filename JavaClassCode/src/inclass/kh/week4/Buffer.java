@@ -13,7 +13,7 @@ public class Buffer {
 			}
 		}
 		empty = true;
-		notifyAll();
+		notifyAll();  //모두에게 상태 전달 / notify()는 본인의 객체한테만 알려줌
 		return data;
 	}
 

@@ -12,6 +12,10 @@ public class ProducerConsumerTest {
 		//Thread tcb = new Thread(new Consumer(new Buffer()));  
 		//이렇게 사용하면 안됨 둘이 다른 Buffer를 보기때문
 		
+		
+		//p.setDaemon(true);   //start이전에 써줘야함
+		//tc.setDaemon(true);
+		p.setPriority(10);   //start이전에 써줘야함
 		p.start();
 		tc.start();
 	}

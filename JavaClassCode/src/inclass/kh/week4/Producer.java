@@ -3,10 +3,6 @@ package inclass.kh.week4;
 public class Producer extends Thread {
 	private Buffer buffer;
 
-	public Producer() {
-		super();
-	}
-
 	public Producer(Buffer buffer) {
 		super();
 		this.buffer = buffer;

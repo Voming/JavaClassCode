@@ -9,7 +9,6 @@ public class Buffer {
 			try {
 				wait();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -19,11 +18,10 @@ public class Buffer {
 	}
 
 	public synchronized void put(int data) {
-		while (empty) {
+		while (!empty) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

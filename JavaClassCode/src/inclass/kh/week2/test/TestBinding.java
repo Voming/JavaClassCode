@@ -1,4 +1,4 @@
-package review.kh.week2;
+package inclass.kh.week2.test;
 
 import inclass.kh.week2.Child;
 import inclass.kh.week2.Parent;

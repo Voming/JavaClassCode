@@ -1,4 +1,4 @@
-package review.kh.week2;
+package inclass.kh.week2.test;
 
 public class ExamIf {
 	public static void main(String args[]) {

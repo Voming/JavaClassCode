@@ -28,14 +28,11 @@ public class ServerBackground {
 			gui.setJtaAppendMsg("접속자 대기 중.....\n");
 			while (true) {
 				socket = serverSocket.accept(); // 여기서 클라이언트 받음
-				// [ejkim - ok]
 				new Receiver(socket).start(); // 클라이언트 마다 Thread 객체 생성
 			}
-			//
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		//
 	}
 
 	// 수신받은 메세지 내용을 BroadCasting(모든 receiver) 방식으로 전파
@@ -46,7 +43,7 @@ public class ServerBackground {
 //				out.writeUTF(receivedMsg);
 				System.out.printf("접속한 사람들: %s, 발신자 : %s\n", key, nickname);
 //				if(!key.equals(nickname)) {
-				clientMap.get(key).writeUTF(receivedMsg);
+				clientMap.get(key).writeUTF(receivedMsg); // DataOutputStream.writeUTF 형태로 들어가게됨
 //				}
 			} catch (IOException e) {
 //				 e.printStackTrace();
@@ -73,11 +70,11 @@ public class ServerBackground {
 				out = new DataOutputStream(socket.getOutputStream());
 				in = new DataInputStream(socket.getInputStream());
 				nickname = in.readUTF();
-				clientMap.put(nickname, out);
+				clientMap.put(nickname, out); // DataOutputStream 객체 자체를 각각 Map에 넣어서 움직임
 				gui.setJtaAppendMsg(nickname + "님 접속하였습니다\n");
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			} 
 		}
 
 		@Override

@@ -23,7 +23,7 @@ public class ClientBackground {
 		this.nickname = nickname;
 		try {
 			socket = new Socket(IP, PORT); // 서버에 연결성공
-			gui.setJtaAppendMsg("서버 접속되었습니다.");
+			gui.setJtaAppendMsg("서버 접속되었습니다.\n");
 			// 서버와 주고 받을 입,출력 통로 생성
 			out = new DataOutputStream(socket.getOutputStream());
 			in = new DataInputStream(socket.getInputStream());

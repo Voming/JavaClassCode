@@ -23,7 +23,7 @@ public class ClientGUI extends JFrame implements ActionListener {
 		this.nickname = nickname;
 		// 생성자 = 초기값지정. JFrame 기본화면 구성
 		jta.setEditable(false);
-		jta.setFont(new Font("맑은고딕", Font.PLAIN, 18)); // 글자 폰트, 크기 변경
+		jta.setFont(new Font("맑은고딕", Font.PLAIN, 14)); // 글자 폰트, 크기 변경
 		jta.setBackground(new Color(230, 255, 230));
 		add(jta, BorderLayout.CENTER);
 		jtf.addActionListener(this); // jtf에서 enter key 치면 actionPerformed()호출되게 등록함
@@ -52,6 +52,5 @@ public class ClientGUI extends JFrame implements ActionListener {
 
 	public void setJtaAppendMsg(String msg) {
 		jta.append(msg); // 채팅 창에 추가
-
 	}
 }

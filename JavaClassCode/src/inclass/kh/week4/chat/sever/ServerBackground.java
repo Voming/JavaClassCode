@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ServerBackground {
-	private final int PORT = 8888;
+	private final int PORT = 8888;  //선언이 Filed 에 있으면 close를 해주지 않음, 가비지 컬랙팅으로 정리됨
 	private ServerSocket serverSocket; // 서버 소켓
 	private Socket socket; // 받아올 소켓 저장
-	// 사용자들의 정보를 저장하는 맵 객체 선언 nickname이 key, so
+	// 사용자들의 정보를 저장하는 맵 객체 선언 nickname이 key / DataOutputStream 만 사용하여 사용자들에게 메시지 뿌림
 	private Map<String, DataOutputStream> clientMap = new HashMap<String, DataOutputStream>();
 	private ServerGUI gui;
 
@@ -36,13 +36,13 @@ public class ServerBackground {
 	}
 
 	// 수신받은 메세지 내용을 BroadCasting(모든 receiver) 방식으로 전파
-	public void sendMessage(String receivedMsg, String nickname) {
-		for (String key : clientMap.keySet()) {
+	public void sendMessage( String nickname, String receivedMsg) {
+		for (String key : clientMap.keySet()) {  // 접속한 모두에게 메시지 전송위해 반복문(키값으로 = 모든 사용자)
 			try {
 //				DataOutputStream out = clientMap.get(key);
 //				out.writeUTF(receivedMsg);
 				System.out.printf("접속한 사람들: %s, 발신자 : %s\n", key, nickname);
-//				if(!key.equals(nickname)) {
+//				if(!key.equals(nickname)) {  
 				clientMap.get(key).writeUTF(receivedMsg); // DataOutputStream.writeUTF 형태로 들어가게됨
 //				}
 			} catch (IOException e) {
@@ -54,7 +54,7 @@ public class ServerBackground {
 	// 맵에 사용자 정보를 삭제하고 화면에 접속 정보를 표현하는 메소드
 	public void removeClient(String nick) {
 		String message = nick + "님이 나가셨습니다. \n";
-		sendMessage(message, nick); // 모든 clientMap 들에게 msg를 보냄
+		sendMessage(nick, message); // 모든 clientMap 들에게 msg를 보냄
 		gui.setJtaAppendMsg(message); // 나의 창에도 msg 나타내기
 		clientMap.remove(nick); // 방금 접속끊긴 사람을 clientMap에서 삭제하기
 	}
@@ -69,7 +69,7 @@ public class ServerBackground {
 			try {
 				out = new DataOutputStream(socket.getOutputStream());
 				in = new DataInputStream(socket.getInputStream());
-				nickname = in.readUTF();
+				nickname = in.readUTF();  //사용자 생성하면 닉네임 받아서 창 생성하기 때문에 이름마다 output 설정해줌
 				clientMap.put(nickname, out); // DataOutputStream 객체 자체를 각각 Map에 넣어서 움직임
 				gui.setJtaAppendMsg(nickname + "님 접속하였습니다\n");
 			} catch (IOException e) {
@@ -84,7 +84,7 @@ public class ServerBackground {
 				while (in != null) { // in 이 null 이 되려면 클라이언트와 통신이 끊어지거나 프로세스 종료되어야 함.
 					msg = in.readUTF(); // UTF 문자셋으로 읽어 오는 메소드
 					gui.setJtaAppendMsg(msg); // 나의 창에도 msg 나타내기
-					sendMessage(msg, nickname); // 모든 clientMap 들에게 msg를 보냄
+					sendMessage(nickname, msg); // 모든 clientMap 들에게 msg를 보냄
 				}
 			} catch (Exception e) { // 클라이언트와 통신이 끊어졌을때
 //				e.printStackTrace();

@@ -44,7 +44,7 @@ public class ServerGUI extends JFrame implements ActionListener {
 		System.out.print(msg);
 		jta.append(msg); // 채팅 창에 추가
 		jtf.setText(""); // 입력 후 내용 초기화
-		back.sendMessage(msg, "운영자");
+		back.sendMessage("운영자", msg);
 	}
 
 	public void setJtaAppendMsg(String msg) {

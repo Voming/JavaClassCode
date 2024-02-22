@@ -19,9 +19,22 @@ public class ClientGUI extends JFrame implements ActionListener {
 	// view - controller필드 생성
 	private ClientBackground back = new ClientBackground(); // 채팅을 담당할 백그라운드(뒷 작업 영역) 선언
 
+	public ClientGUI() {
+		this("익명 클라이언트");
+	}
 	public ClientGUI(String nickname) {
+		super();
 		this.nickname = nickname;
+		
 		// 생성자 = 초기값지정. JFrame 기본화면 구성
+		init();
+
+//		The method setGui(ServerGUI) in the type ClientBackground is not applicable for the arguments (ClientGUI)
+		back.setGui(this);
+		back.connect(nickname);
+	}
+	
+	private void init() {
 		jta.setEditable(false);
 		jta.setFont(new Font("맑은고딕", Font.PLAIN, 14)); // 글자 폰트, 크기 변경
 		jta.setBackground(new Color(230, 255, 230));
@@ -33,10 +46,6 @@ public class ClientGUI extends JFrame implements ActionListener {
 		setTitle("클라이언트부분");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
-
-//		The method setGui(ServerGUI) in the type ClientBackground is not applicable for the arguments (ClientGUI)
-		back.setGui(this);
-		back.connect(nickname);
 	}
 
 	@Override
@@ -47,7 +56,7 @@ public class ClientGUI extends JFrame implements ActionListener {
 		System.out.print(msg);
 		// jta.append(msg); // 채팅 창에 추가
 		jtf.setText(""); // 입력 후 내용 초기화
-		back.sendMessage(msg);
+		back.sendMessage(msg);   //enter 칠때마다 서버로 메시지 보냄
 	}
 
 	public void setJtaAppendMsg(String msg) {

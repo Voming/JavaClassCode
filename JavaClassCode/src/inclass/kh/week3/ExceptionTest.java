@@ -14,8 +14,17 @@ public class ExceptionTest {
 	public static void method1() throws FileNotFoundException {
 		// try catch 대신 throws로 처리함
 		// 해당 메소드를 쓰는 모든 곳에서 똑같이 throws를 선언해줘야함
-		BufferedReader br = new BufferedReader(new FileReader(new File("")));
-		System.out.println("파일이 없습니다.");
+		BufferedReader br = new BufferedReader(new FileReader(new File("./src/a.txt")));  //bin == src
+		//파일 내용 출력하기
+		System.out.println(br);
+		String s = null;
+		try {
+			while((s = br.readLine()) != null) {
+				System.out.println(s);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void method() {

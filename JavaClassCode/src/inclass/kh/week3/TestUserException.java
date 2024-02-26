@@ -13,7 +13,6 @@ public class TestUserException {
 			int result = instance1.printEven(input);
 			System.out.println(result);
 		} catch (EvenException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

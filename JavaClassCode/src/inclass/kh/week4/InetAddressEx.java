@@ -59,7 +59,6 @@ public class InetAddressEx {
 			// IP주소가 loopback 주소(127.0.0.1)인지 알려준다. boolean
 			System.out.println("isLoopbackAddress : " + ia.isLoopbackAddress());
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

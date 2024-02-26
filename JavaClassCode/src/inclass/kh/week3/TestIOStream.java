@@ -92,7 +92,7 @@ public class TestIOStream {
 			while(( s = br.readLine()) != null) {
 				System.out.println(s);
 			}
-			
+		
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
